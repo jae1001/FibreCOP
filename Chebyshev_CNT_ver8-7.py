@@ -752,9 +752,9 @@ radio2.grid(row=1,column=3,sticky=tk.W,padx=5)
 can = tk.Canvas(window, bg="white", height=80, width=80,relief='sunken')
 can.grid(row=0,rowspan=5,column=0)
 
-#imfile = tk.PhotoImage(file = "icon.gif")
-#imfile= imfile.subsample(3,3)
-#image = can.create_image(40,40, anchor=tk.CENTER, image=imfile)
+imfile = tk.PhotoImage(file = "icon.gif")
+imfile= imfile.subsample(3,3)
+image = can.create_image(40,40, anchor=tk.CENTER, image=imfile)
 
 label2 = tk.Label(window, text="Image Analysis Options", font=('Helevetica',13)) 
 label2.grid(row=4,column=1,columnspan=2, padx=5, pady=5)
