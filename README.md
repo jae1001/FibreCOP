@@ -14,7 +14,7 @@ or comment out the appropriate lines in the code.
 Analysis data is stored in FibreCOP_result.csv
 
 Code developed by Dr. A. Kaniyoor, Macromolecular Materials Laboratory, University of Cambridge, Cambridge, UK
-Correspondednce can also be directed to Prof. J. A. Elliott, University of Cambridge, Cambridge, UK
+Correspondence can also be directed to Prof. J. A. Elliott, University of Cambridge, Cambridge, UK
 
 Reference Publication:
 Quantifying Alignment in Carbon Nanotube Yarns and Similar 2D Anisotropic Systems. 
