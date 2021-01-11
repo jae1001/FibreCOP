@@ -5,7 +5,7 @@ Digital photographs of macroscopic fibres can also be analysed.
 
 Preferred formats:
 Image: '.tiff', imread in openCV also supports most other filetypes such as
-        .jpg, .png etc. (https://docs.opencv.org/4.2.0/d4/da8/group__imgcodecs.html#ga288b8b3da0892bd651fce07b3bbd3a56)
+        .jpg, .png etc. 
 Data: '.csv' format with no headers and only X and Y columns.
 
 Please download the icon.gif along with the code, for smooth execution of the program
