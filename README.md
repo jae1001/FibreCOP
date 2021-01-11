@@ -1,5 +1,5 @@
 # FibreCOP
-This program calculates the Chebyshev/Herman orientation parameters
+The main program FibreCOP calculates the Chebyshev/Herman orientation parameters
 for aligned fibres from their SEM image/intensity distribution data.
 Digital photographs of macroscopic fibres can also be analysed.
 
