@@ -20,4 +20,3 @@ Reference Publication:
 Quantifying Alignment in Carbon Nanotube Yarns and Similar 2D Anisotropic Systems. 
 A. Kaniyoor, T.S. Gspann, J. E. Mizen, J.A. Elliott, J. Appl. Polym. Sci., 138, e50939 (2021).
 https://onlinelibrary.wiley.com/doi/pdf/10.1002/app.50939
-
