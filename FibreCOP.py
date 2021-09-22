@@ -21,6 +21,7 @@ A. Kaniyoor, T.S. Gspann, J. E. Mizen, J.A. Elliott, To be submitted.
 
 '''
 
+import math
 import numpy as np
 import cv2
 import tkinter as tk
@@ -426,7 +427,7 @@ def CosNth2D (x,y,Range='Pi'):
     elif Range == 'Pi/2':
         div=4
     x=x[0:int(len(x)/div)]
-    yAvg=(y[0:int(len(y)/div)]+y[int(len(y)/div)::])/2  # taking average of values upto Pi
+    yAvg=(y[0:math.floor(len(y)/div)]+y[math.ceil(len(y)/div)::])/2  # taking average of values upto Pi
     num=yAvg*np.power(np.cos(x*np.pi/180),2)
     den=yAvg
     cosSqrd2D=round(trapz(num,x)/trapz(den,x),3)
@@ -444,7 +445,7 @@ def CosNth3D (x,y,Range='Pi'):
     elif Range == 'Pi/2':
         div=4
     x=x[0:int(len(x)/div)]
-    y=(y[0:int(len(y)/div)]+y[int(len(y)/div)::])/2  # taking average of values upto Pi
+    y=(y[0:math.floor(len(y)/div)]+y[math.ceil(len(y)/div)::])/2  # taking average of values upto Pi
     num=y*np.power(np.cos(x*np.pi/180),2)*np.abs(np.sin(x*np.pi/180))
     den=y*np.abs(np.sin(x*np.pi/180))
     cosSqrd3D=round(trapz(num,x)/trapz(den,x),3)

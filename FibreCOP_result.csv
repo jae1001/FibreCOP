@@ -1,2 +1,48 @@
 T2(smooth),T4(smooth),P2(smooth),P4(smooth),T2(filetered),T4(filetered),P2(filetered),P4(filetered)
 0.774,0.52,0.539,0.239,0.838,0.6,0.539,0.329
+Sample,Bin Size,Peaks Fit,IDF,FWHM,Beta(GND),T2,T4,P2,P4,Parameters Fit,Reduced Chi Sq,AIC,BIC
+01-S1.tif,0.25,3,Lorentzian,7.52,nan,0.814,0.68,0.489,0.314,9,0.019226796604605325,-5673.213837285784,-5625.774760441255
+Sample,Bin Size,Peaks Fit,IDF,FWHM,Beta(GND),T2,T4,P2,P4,Parameters Fit,Reduced Chi Sq,AIC,BIC
+01-S1.tif,0.25,2,Lorentzian,61.0,nan,0.36,0.136,0.198,0.053,7,0.03452582978661851,-4833.393463626985,-4796.496403859018
+Sample,Bin Size,Peaks Fit,IDF,FWHM,Beta(GND),T2,T4,P2,P4,Parameters Fit,Reduced Chi Sq,AIC,BIC
+S1_azimuthal.csv,0.25,2,Lorentzian,18.3,nan,0.646,0.384,0.416,0.21,7,0.04076303382934928,-1093.8651988960835,-1066.9807072944698
+Sample,Bin Size,Peaks Fit,IDF,FWHM,Beta(GND),T2,T4,P2,P4,Parameters Fit,Reduced Chi Sq,AIC,BIC
+S1_azimuthal.csv,0.25,3,Lorentzian,20.26,nan,0.638,0.336,0.434,0.213,9,0.0011079384657313339,-2332.1272818073517,-2297.561506890991
+Sample,Bin Size,Peaks Fit,IDF,FWHM,Beta(GND),T2,T4,P2,P4,Parameters Fit,Reduced Chi Sq,AIC,BIC
+S1_azimuthal_wpd.csv,0.25,3,Lorentzian,18.96,nan,0.642,0.336,0.452,0.221,9,0.001055120788176644,-1430.5595565217177,-1400.4355887452605
+Sample,Bin Size,Peaks Fit,IDF,FWHM,Beta(GND),T2,T4,P2,P4,Parameters Fit,Reduced Chi Sq,AIC,BIC
+S1_azimuthal_wpd.csv,0.25,3,Lorentzian,18.96,nan,0.642,0.336,0.452,0.221,9,0.001055120788176644,-1430.5595565217177,-1400.4355887452605
+Sample,Bin Size,Peaks Fit,IDF,FWHM,Beta(GND),T2,T4,P2,P4,Parameters Fit,Reduced Chi Sq,AIC,BIC
+S1_azimuthal_wpd.csv,0.25,3,Lorentzian,18.94,nan,0.642,0.336,0.452,0.221,9,0.0010568490229676502,-1430.2158684773103,-1400.091900700853
+Sample,Bin Size,Peaks Fit,IDF,FWHM,Beta(GND),T2,T4,P2,P4,Parameters Fit,Reduced Chi Sq,AIC,BIC
+S1_azimuthal_wpd2.csv,0.25,3,Lorentzian,18.96,nan,0.642,0.336,0.451,0.224,9,0.0010645665663315562,-1428.6879347105507,-1398.5639669340935
+Sample,Bin Size,Peaks Fit,IDF,FWHM,Beta(GND),T2,T4,P2,P4,Parameters Fit,Reduced Chi Sq,AIC,BIC
+S1_azimuthal_wpd2.csv,0.25,3,Lorentzian,18.96,nan,0.642,0.336,0.451,0.224,9,0.001064462751737545,-1428.708414526939,-1398.5844467504817
+Sample,Bin Size,Peaks Fit,IDF,FWHM,Beta(GND),T2,T4,P2,P4,Parameters Fit,Reduced Chi Sq,AIC,BIC
+S1_azimuthal_wpd2.csv,0.25,3,Lorentzian,18.96,nan,0.642,0.336,0.451,0.224,9,0.001064462751737545,-1428.708414526939,-1398.5844467504817
+Sample,Bin Size,Peaks Fit,IDF,FWHM,Beta(GND),T2,T4,P2,P4,Parameters Fit,Reduced Chi Sq,AIC,BIC
+S1_azimuthal_wpd3.csv,0.25,3,Lorentzian,19.08,nan,0.642,0.336,0.452,0.225,9,0.0010341033871758682,-1434.7848600205853,-1404.660892244128
+Sample,Bin Size,Peaks Fit,IDF,FWHM,Beta(GND),T2,T4,P2,P4,Parameters Fit,Reduced Chi Sq,AIC,BIC
+S1_azimuthal_wpd3.csv,0.25,3,Lorentzian,18.96,nan,0.632,0.32,0.444,0.208,9,0.001047641063583389,-1432.0535429074305,-1401.9295751309733
+Sample,Bin Size,Peaks Fit,IDF,FWHM,Beta(GND),T2,T4,P2,P4,Parameters Fit,Reduced Chi Sq,AIC,BIC
+S1_azimuthal_wpd3.csv,0.25,3,Lorentzian,19.0,nan,0.624,0.304,0.436,0.201,9,0.0010469098484495712,-1418.4783077653783,-1388.4404650480665
+Sample,Bin Size,Peaks Fit,IDF,FWHM,Beta(GND),T2,T4,P2,P4,Parameters Fit,Reduced Chi Sq,AIC,BIC
+S1_azimuthal_wpd3.csv,0.25,3,Lorentzian,19.0,nan,0.624,0.304,0.436,0.201,9,0.0010469098484495712,-1418.4783077653783,-1388.4404650480665
+Sample,Bin Size,Peaks Fit,IDF,FWHM,Beta(GND),T2,T4,P2,P4,Parameters Fit,Reduced Chi Sq,AIC,BIC
+S1_azimuthal_wpd3.csv,0.25,3,Lorentzian,18.96,nan,0.632,0.32,0.444,0.208,9,0.0010476410647413561,-1432.0535426753156,-1401.9295748988584
+Sample,Bin Size,Peaks Fit,IDF,FWHM,Beta(GND),T2,T4,P2,P4,Parameters Fit,Reduced Chi Sq,AIC,BIC
+S1_azimuthal_wpd3.csv,0.25,3,Lorentzian,18.96,nan,0.632,0.32,0.444,0.208,9,0.0010476410647413561,-1432.0535426753156,-1401.9295748988584
+Sample,Bin Size,Peaks Fit,IDF,FWHM,Beta(GND),T2,T4,P2,P4,Parameters Fit,Reduced Chi Sq,AIC,BIC
+S1_azimuthal_wpd3.csv,0.25,3,Lorentzian,18.96,nan,0.632,0.32,0.444,0.208,9,0.0010476410647413561,-1432.0535426753156,-1401.9295748988584
+Sample,Bin Size,Peaks Fit,IDF,FWHM,Beta(GND),T2,T4,P2,P4,Parameters Fit,Reduced Chi Sq,AIC,BIC
+S1_azimuthal_wpd3.csv,0.25,3,Gaussian,26.52,nan,0.862,0.528,0.836,0.538,9,0.018676105503583118,-827.1057248328882,-796.981757056431
+Sample,Bin Size,Peaks Fit,IDF,FWHM,Beta(GND),T2,T4,P2,P4,Parameters Fit,Reduced Chi Sq,AIC,BIC
+P2 calcs.csv,0.25,3,Lorentzian,21.66,nan,0.68,0.44,0.432,0.229,9,0.001276575190153981,-1317.2611792697448,-1287.6214358472243
+Sample,Bin Size,Peaks Fit,IDF,FWHM,Beta(GND),T2,T4,P2,P4,Parameters Fit,Reduced Chi Sq,AIC,BIC
+P2 calcs.csv,0.25,3,Lorentzian,21.66,nan,0.68,0.44,0.432,0.229,9,0.001276575190153981,-1317.2611792697448,-1287.6214358472243
+Sample,Bin Size,Peaks Fit,IDF,FWHM,Beta(GND),T2,T4,P2,P4,Parameters Fit,Reduced Chi Sq,AIC,BIC
+P2 calcs.csv,0.25,3,Lorentzian,21.66,nan,0.68,0.44,0.432,0.229,9,0.001276575190153981,-1317.2611792697448,-1287.6214358472243
+Sample,Bin Size,Peaks Fit,IDF,FWHM,Beta(GND),T2,T4,P2,P4,Parameters Fit,Reduced Chi Sq,AIC,BIC
+P2 calcs.csv,0.25,3,Lorentzian,21.48,nan,0.69,0.456,0.432,0.234,9,0.0012292402271287884,-1331.4805880953425,-1301.79573179641
+Sample,Bin Size,Peaks Fit,IDF,FWHM,Beta(GND),T2,T4,P2,P4,Parameters Fit,Reduced Chi Sq,AIC,BIC
+P2 calcs.csv,0.25,3,Lorentzian,21.66,nan,0.68,0.44,0.432,0.229,9,0.001276575190153981,-1317.2611792697448,-1287.6214358472243
