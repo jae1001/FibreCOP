@@ -236,7 +236,7 @@ def fitModel (x,y,t1,t2,t3,t4,t5,t6,n,c1,c2,c3,c4,c5,c6,chck1,chck2,chck3):
     eqWidth=chck2
     eqBeta=chck3
 
-    bline=0 #or min(y)
+    bline=min(y) # or use 0
        
     Lin1 = LinearModel(prefix='BackG_')
     pars = Lin1.make_params()
