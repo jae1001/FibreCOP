@@ -223,7 +223,7 @@ class gndModel(Model):
         return lmfit.models.update_param_vals(params, self.prefix, **kwargs)
 
 
-def fitModel (x,y,t1,t2,t3,t4,t5,t6,n,c1,c2,c3,c4,c5,c6,chck1,chck2,chck3):
+def fitModel (x,y,t1,t2,t3,t4,t5,t6,n,c1,c2,c3,c4,c5,c6,chck1,chck2,chck3,bl):
     fitType1=t1
     fitType2=t2
     fitType3=t3
@@ -235,13 +235,13 @@ def fitModel (x,y,t1,t2,t3,t4,t5,t6,n,c1,c2,c3,c4,c5,c6,chck1,chck2,chck3):
     fitstats=chck1
     eqWidth=chck2
     eqBeta=chck3
+    bline=bl
 
-    bline=min(y) # or use 0
        
     Lin1 = LinearModel(prefix='BackG_')
     pars = Lin1.make_params()
-    pars['BackG_slope'].set(0)# min=-0.001, max=0.001)
-    pars['BackG_intercept'].set(bline, min=0)
+    pars['BackG_slope'].set(0, min=-0.001, max=0.001)
+    pars['BackG_intercept'].set(min(y), min=0)
     
     if fitType1=='Lorentzian':
         pk1 = LorentzianModel(prefix='Peak1_')
@@ -417,9 +417,14 @@ def fitModel (x,y,t1,t2,t3,t4,t5,t6,n,c1,c2,c3,c4,c5,c6,chck1,chck2,chck3):
         #plt.xlabel('Angle (\xb0)', fontsize=28)
         #plt.ylabel('Intensity (a.u.)', fontsize=28)
     #plt.show()
-    
-    yBestFit = out.best_fit - comps['BackG_']
-        
+
+    if bline=="Auto":
+        yBestFit = out.best_fit - comps['BackG_']
+    if bline=="None":
+        yBestFit = out.best_fit
+    if bline=="Constant":
+        yBestFit = out.best_fit - 0.5*comps['BackG_'] # arbitrary, can be changed later
+            
     return out, yBestFit
 
             
@@ -508,8 +513,8 @@ def calcCOP():
     check1=checkvar1.get()
     check2=checkvar2.get()
     check3=checkvar3.get()
-
-
+    bl=bltype.get()
+    
     filebasename=ntpath.basename(filename)
     
     
@@ -675,7 +680,7 @@ def calcCOP():
             
                        
         #fitting peaks to filteredintensity        
-        fitOut,yFilter=fitModel(x,filteredIntensity,t1,t2,t3,t4,t5,t6,n,c1,c2,c3,c4,c5,c6,check1,check2,check3)
+        fitOut,yFilter=fitModel(x,filteredIntensity,t1,t2,t3,t4,t5,t6,n,c1,c2,c3,c4,c5,c6,check1,check2,check3,bl)
         fitOutput.append(fitOut)
         IDFtype.append(t2)
         binSiz.append(binSize)
@@ -811,7 +816,7 @@ def calcCOP():
     
 window = tk.Tk() #Create window object
 window.title('FibreCOP: Chebyshev Orientation Parameter for CNT textiles')
-window.geometry("600x780+0+0")
+#window.geometry("600x780+0+0")
 
 can_icon = tk.Canvas(window,height=50,width=60,relief='sunken')
 can_icon.grid(row=0,rowspan=5,column=0,columnspan=1, sticky=tk.NSEW)
@@ -846,8 +851,8 @@ label4 = tk.Label(window, text="Strip height")
 label4.grid(row=6,column=1, sticky=tk.W,padx=5, pady=5)
 stripHeight=tk.StringVar()
 stripHeight.set("7")
-entry4=tk.Entry(window,width=16, textvariable=stripHeight)
-entry4.grid(row=6,column=2, pady=5)
+entry4=tk.Entry(window,width=12, textvariable=stripHeight)
+entry4.grid(row=6,column=2, padx=5, pady=5)
 label14=tk.Label(window, text="(Image: %height of SEM info bar to be stripped; Data: NA)")
 label14.grid(row=6,column=3, columnspan=4,sticky=tk.W,padx=5, pady=5)
 
@@ -856,8 +861,8 @@ label5 = tk.Label(window, text="De-noising")
 label5.grid(row=7,column=1, sticky=tk.W,padx=5, pady=5)
 Denoise=tk.StringVar()
 Denoise.set("0")
-entry5=tk.Entry(window,width=16,textvariable=Denoise)
-entry5.grid(row=7,column=2, pady=5)
+entry5=tk.Entry(window,width=12,textvariable=Denoise)
+entry5.grid(row=7,column=2,  padx=5,pady=5)
 label15=tk.Label(window, text="(Image: noise level 0-1, Data: use 0)")
 label15.grid(row=7,column=3, columnspan=4,sticky=tk.W,padx=5, pady=5)
 
@@ -867,7 +872,7 @@ RotateImg=tk.StringVar()
 RotateImg.set("Yes")
 option57=tk.OptionMenu(window,RotateImg,"Yes","No")
 option57.configure(width=10,bg='white',bd=1,activebackground='white',relief='sunken')
-option57.grid(row=8,column=2, pady=5)
+option57.grid(row=8,column=2, padx=5,pady=5)
 label57=tk.Label(window, text="(Image: 'Yes' if image horizontal, Data: usually 'No')")
 label57.grid(row=8,column=3,columnspan=4, sticky=tk.W,padx=5, pady=5)
 
@@ -878,7 +883,7 @@ Binarize=tk.StringVar()
 Binarize.set("Gaussian")
 option58=tk.OptionMenu(window,Binarize,"Gaussian","OTSU")
 option58.configure(width=10,bg='white',bd=1,activebackground='white',relief='sunken')
-option58.grid(row=9,column=2, pady=5)
+option58.grid(row=9,column=2, padx=5,pady=5)
 label158=tk.Label(window, text="(works for images only)")
 label158.grid(row=9,column=3, columnspan=4,sticky=tk.W,padx=5, pady=5)
 
@@ -886,7 +891,7 @@ label6 = tk.Label(window, text="No. of Scans")
 label6.grid(row=10,column=1, sticky=tk.W,padx=5, pady=5)
 xScan=tk.StringVar()
 xScan.set("1")
-entry6=tk.Entry(window,width=16,textvariable=xScan)
+entry6=tk.Entry(window,width=12,textvariable=xScan)
 entry6.grid(row=10,column=2,pady=5)
 label16=tk.Label(window, text="(Image: no. of sq. areas to be scanned, > 0; Data: use 1)")
 label16.grid(row=10,column=3,columnspan=4, sticky=tk.W,padx=5, pady=5)
@@ -895,7 +900,7 @@ label7 = tk.Label(window, text="Bin Size")
 label7.grid(row=11,column=1, sticky=tk.W,padx=5, pady=5)
 BinSize=tk.StringVar()
 BinSize.set("0.25")
-entry7=tk.Entry(window,width=16,textvariable=BinSize)
+entry7=tk.Entry(window,width=12,textvariable=BinSize)
 entry7.grid(row=11,column=2,pady=5)
 label17=tk.Label(window, text="(Image: use < 1, angle step-size for radial sum; Data: NA)")
 label17.grid(row=11,column=3,columnspan=4, sticky=tk.W,padx=5, pady=5)
@@ -906,7 +911,7 @@ DispImg=tk.StringVar()
 DispImg.set("Yes")
 option45=tk.OptionMenu(window,DispImg,"Yes","No")
 option45.configure(width=10,bg='white',bd=1,activebackground='white',relief='sunken')
-option45.grid(row=12,column=2,pady=5)
+option45.grid(row=12,column=2, padx=5, pady=5)
 label145=tk.Label(window, text="(display images used for analysis)")
 label145.grid(row=12,column=3,columnspan=4, sticky=tk.W,padx=5, pady=5)
 
@@ -914,7 +919,7 @@ labe20 = tk.Label(window, text="Filter Interval")
 labe20.grid(row=14,column=1, sticky=tk.W,padx=5, pady=5)
 filtLev=tk.StringVar()
 filtLev.set("5")
-entry20=tk.Entry(window,width=16,textvariable=filtLev)
+entry20=tk.Entry(window,width=12,textvariable=filtLev)
 entry20.grid(row=14,column=2,pady=5)
 label20=tk.Label(window, text="(>=3, odd, window size for median filter)")
 label20.grid(row=14,column=3,columnspan=4, sticky=tk.W,padx=5, pady=5)
@@ -1037,7 +1042,7 @@ entry37.grid(row=24,column=4,pady=5,sticky=tk.W)
 checkvar1=tk.IntVar()
 checkvar1.set(0)
 check1=tk.Checkbutton(window,text='Fit Statistics',variable=checkvar1,onvalue=1,offvalue=0)
-check1.grid(row=23,column=5,padx=5, pady=5,sticky=tk.W)
+check1.grid(row=22,column=5,padx=5, sticky=tk.NW)
 
 checkvar2=tk.IntVar()
 checkvar2.set(1)
@@ -1052,6 +1057,13 @@ check3.grid(row=20,column=5,padx=5, pady=5,sticky=tk.W)
 label124=tk.Label(window,text='(options valid up to 3 peaks)')
 label124.grid(row=21,column=5,sticky=tk.N)
 
+label156=tk.Label(window,text='Baseline Removal')
+label156.grid(row=23,column=5, sticky=tk.W)
+bltype=tk.StringVar()
+bltype.set("Auto")
+option156=tk.OptionMenu(window,bltype,"Auto","None","Constant")
+option156.configure(width=10,bg='white',bd=1,activebackground='white',relief='sunken')
+option156.grid(row=24,column=5,sticky=tk.NW,padx=5)
 
 calcButton = tk.Button(window, text='Calculate COP', command=calcCOP)
 calcButton.grid(row=100,column=2, columnspan = 3, sticky= tk.EW, padx=5, pady=5)
