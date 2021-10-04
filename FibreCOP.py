@@ -2,6 +2,10 @@
 for aligned fibres from their SEM image/intensity distribution data.
 Digital photographs of macroscopic fibres can also be analysed.
 
+First time users of a python program might need to install additional python modules
+for the code to run. Please refer to python.org or similar website for installation instructions
+specific to your OS.     
+
 Preferred formats:
 Image: '.tiff', imread in openCV also supports most other filetypes such as
         .jpg, .png etc. (https://docs.opencv.org/4.2.0/d4/da8/group__imgcodecs.html#ga288b8b3da0892bd651fce07b3bbd3a56)
@@ -231,11 +235,13 @@ def fitModel (x,y,t1,t2,t3,t4,t5,t6,n,c1,c2,c3,c4,c5,c6,chck1,chck2,chck3):
     fitstats=chck1
     eqWidth=chck2
     eqBeta=chck3
+
+    bline=0 #or min(y)
        
     Lin1 = LinearModel(prefix='BackG_')
     pars = Lin1.make_params()
-    pars['BackG_slope'].set(0)#, min=-0.001, max=0.001)
-    pars['BackG_intercept'].set(2e7, min=0)
+    pars['BackG_slope'].set(0)# min=-0.001, max=0.001)
+    pars['BackG_intercept'].set(bline, min=0)
     
     if fitType1=='Lorentzian':
         pk1 = LorentzianModel(prefix='Peak1_')
